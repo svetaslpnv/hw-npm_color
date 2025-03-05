@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/@melloware/coloris/dist/coloris.css">
+    <style>
+        .title {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Домашечка по NPM</h1>
+    <input class="user-color" type="text" data-coloris>
+    <button class="button">выбрать цвет</button>
+
+    <script src="./node_modules/@melloware/coloris/dist/umd/coloris.js"></script>
+    <script>
+        const title = document.querySelector('.title');
+        const userColor = document.querySelector('.user-color');
+        const button = document.querySelector('.button');
+
+        button.addEventListener('click', function (event) {
+            title.style.color = userColor.value;
+        })
+    </script>
+</body>
+</html>
