@@ -12,19 +12,31 @@
     </style>
 </head>
 <body>
-    <h1 class="title">Домашечка по NPM</h1>
-    <input class="user-color" type="text" data-coloris>
-    <button class="button">выбрать цвет</button>
+    <div class="app"></div>
 
     <script src="./node_modules/@melloware/coloris/dist/umd/coloris.js"></script>
     <script>
-        const title = document.querySelector('.title');
-        const userColor = document.querySelector('.user-color');
-        const button = document.querySelector('.button');
+        const app = document.querySelector('.app');
 
-        button.addEventListener('click', function (event) {
-            title.style.color = userColor.value;
-        })
+        function createColorPicker() {
+            const title = document.createElement('h1');
+            title.classList.add('title');
+            title.textContent = 'Домашечка по NPM';
+            const userColor = document.createElement('input');
+            userColor.dataset.coloris = '';
+            userColor.classList.add('user-color');
+            const button = document.createElement('button');
+            button.textContent = 'выбрать цвет';
+            app.appendChild(title);
+            app.appendChild(userColor);
+            app.appendChild(button);
+            
+            button.addEventListener('click', function (event) {
+                title.style.color = userColor.value;
+            })
+        }
+
+        createColorPicker();
     </script>
 </body>
 </html>
